@@ -366,7 +366,7 @@ void openAudioOutDevice (dsd_opts * opts, int speed)
 {
 
 
- 	if(strncmp(opts->audio_out_dev, "--", 1) == 0)
+ 	if(strncmp(opts->audio_out_dev, "-", 1) == 0)
 	{
 		opts->audio_out_type = 1;
 				
