@@ -364,6 +364,19 @@ error:
 
 void openAudioOutDevice (dsd_opts * opts, int speed)
 {
+
+
+ 	if(strncmp(opts->audio_out_dev, "--", 1) == 0)
+	{
+		opts->audio_out_type = 1;
+				
+		opts->audio_out_fd = fileno(stdout);
+
+  		printf ("Audio Out Device: stdout\n");
+  		
+		return;
+	}
+
   // get info of device/file
   if(strncmp(opts->audio_out_dev, "pa:", 3) == 0)
   {
